@@ -12,7 +12,7 @@ db.sequelize.sync();
 
 var allowedOrigins = [
   "http://localhost:8080",
-  "https://mortgage-client.herokuapp.com/",
+  "https://mortgage-client.herokuapp.com",
 ];
 
 app.use(
