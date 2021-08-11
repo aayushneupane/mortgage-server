@@ -187,19 +187,22 @@ exports.reset = (req, res) => {
   })
     .then((nums) => {
       console.log(`${nums} were deleted`);
-      let accountFile = fs.readFile(path.resolve("../accounts.json", (err, data) => {
-        if (err) throw err;
-        let accounts = JSON.parse(data);
-        Account.bulkCreate(accounts)
-          .then(() => {
-            res.status(200).send({ message: "Successfully reset account" });
-          })
-          .catch((err) => {
-            res.status(500).send({
-              message: err.message || "Unable to bulk upload accounts.",
+      let accountFile = fs.readFile(
+        path.resolve("../accounts.json"),
+        (err, data) => {
+          if (err) throw err;
+          let accounts = JSON.parse(data);
+          Account.bulkCreate(accounts)
+            .then(() => {
+              res.status(200).send({ message: "Successfully reset account" });
+            })
+            .catch((err) => {
+              res.status(500).send({
+                message: err.message || "Unable to bulk upload accounts.",
+              });
             });
-          });
-      });
+        }
+      );
     })
     .catch((err) => {
       res.status(500).send({
