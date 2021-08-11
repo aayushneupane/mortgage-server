@@ -188,7 +188,7 @@ exports.reset = (req, res) => {
     .then((nums) => {
       console.log(`${nums} were deleted`);
       let accountFile = fs.readFile(
-        path.resolve("../accounts.json"),
+        path.resolve("./accounts.json"),
         (err, data) => {
           if (err) throw err;
           let accounts = JSON.parse(data);
