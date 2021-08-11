@@ -1,0 +1,8 @@
+{
+  "db": {
+    "host": "localhost",
+    "user": "mortgage_user",
+    "password": "mortgage_password",
+    "db": "mortgage"
+  }
+}

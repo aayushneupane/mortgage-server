@@ -1,0 +1,8 @@
+{
+  "db": {
+    "host": "mysql://b8a4151177a3f6:28209c5a@us-cdbr-east-04.cleardb.com/heroku_541ea25bfb6ce71?reconnect=true",
+    "user": "b8a4151177a3f6",
+    "password": "28209c5a ",
+    "db": "heroku_541ea25bfb6ce71"
+  }
+}

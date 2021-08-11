@@ -1,8 +1,9 @@
+const config = require("config");
 module.exports = {
-  HOST: "localhost",
-  USER: "mortgage_user",
-  PASSWORD: "mortgage_password",
-  DB: "mortgage",
+  HOST: config.get("db.host"),
+  USER: config.get("db.user"),
+  PASSWORD: config.get("db.password"),
+  DB: config.get("db.db"),
   dialect: "mysql",
   pool: {
     max: 5,
