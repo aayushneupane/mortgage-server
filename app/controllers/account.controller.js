@@ -50,7 +50,10 @@ exports.findAll = (req, res) => {
   let condition = name_first
     ? { name_first: { [Op.like]: `%${name_first}%` } }
     : null;
-  Account.findAll({ where: condition })
+  Account.findAll({
+    where: condition,
+    order: [["created", "DESC"]],
+  })
     .then((data) => {
       res.send(data);
     })

@@ -19,7 +19,10 @@ module.exports = (sequelize, Sequelize) => {
       phone: Sequelize.STRING,
       address: Sequelize.STRING,
       comments: Sequelize.STRING,
-      created: Sequelize.DATE,
+      created: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
+      },
       tags: {
         type: Sequelize.STRING,
         allowNull: false,
