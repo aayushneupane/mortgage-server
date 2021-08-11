@@ -152,6 +152,35 @@ exports.reset = (req, res) => {
   console.log("process.cwd() : ", process.cwd());
   console.log("./ : ", path.resolve("./"));
   console.log("filename: ", __filename);
+
+  console.log("path.resolve ./");
+  fs.readdir(path.resolve("./"), (err, files) => {
+    files.forEach((file) => {
+      console.log(file);
+    });
+  });
+
+  console.log("path.resolve ../");
+  fs.readdir(path.resolve("../"), (err, files) => {
+    files.forEach((file) => {
+      console.log(file);
+    });
+  });
+
+  console.log("../");
+  fs.readdir("../", (err, files) => {
+    files.forEach((file) => {
+      console.log(file);
+    });
+  });
+
+  console.log("./");
+  fs.readdir("./", (err, files) => {
+    files.forEach((file) => {
+      console.log(file);
+    });
+  });
+
   Account.destroy({
     where: {},
     truncate: false,
