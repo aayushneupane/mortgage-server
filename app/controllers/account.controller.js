@@ -2,6 +2,7 @@ const db = require("../models");
 const Account = db.account;
 const Op = db.Sequelize.Op;
 const fs = require("fs");
+var path = require("path");
 
 // Create and Save a new Account
 exports.create = (req, res) => {
@@ -146,6 +147,11 @@ exports.deleteAll = (req, res) => {
 
 //Reset all values to use dummy values from accounts.json file
 exports.reset = (req, res) => {
+  // Methods to display directory
+  console.log("__dirname:    ", __dirname);
+  console.log("process.cwd() : ", process.cwd());
+  console.log("./ : ", path.resolve("./"));
+  console.log("filename: ", __filename);
   Account.destroy({
     where: {},
     truncate: false,
