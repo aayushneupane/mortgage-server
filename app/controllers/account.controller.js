@@ -147,40 +147,6 @@ exports.deleteAll = (req, res) => {
 
 //Reset all values to use dummy values from accounts.json file
 exports.reset = (req, res) => {
-  // Methods to display directory
-  console.log("__dirname:    ", __dirname);
-  console.log("process.cwd() : ", process.cwd());
-  console.log("./ : ", path.resolve("./"));
-  console.log("filename: ", __filename);
-
-  console.log("path.resolve ./");
-  fs.readdir(path.resolve("./"), (err, files) => {
-    files.forEach((file) => {
-      console.log("path.resolve ./", file);
-    });
-  });
-
-  console.log("path.resolve ../");
-  fs.readdir(path.resolve("../"), (err, files) => {
-    files.forEach((file) => {
-      console.log("path.resolve ../", file);
-    });
-  });
-
-  console.log("../");
-  fs.readdir("../", (err, files) => {
-    files.forEach((file) => {
-      console.log("../", file);
-    });
-  });
-
-  console.log("./");
-  fs.readdir("./", (err, files) => {
-    files.forEach((file) => {
-      console.log("./", file);
-    });
-  });
-
   Account.destroy({
     where: {},
     truncate: false,
