@@ -156,28 +156,28 @@ exports.reset = (req, res) => {
   console.log("path.resolve ./");
   fs.readdir(path.resolve("./"), (err, files) => {
     files.forEach((file) => {
-      console.log(file);
+      console.log("path.resolve ./", file);
     });
   });
 
   console.log("path.resolve ../");
   fs.readdir(path.resolve("../"), (err, files) => {
     files.forEach((file) => {
-      console.log(file);
+      console.log("path.resolve ../", file);
     });
   });
 
   console.log("../");
   fs.readdir("../", (err, files) => {
     files.forEach((file) => {
-      console.log(file);
+      console.log("../", file);
     });
   });
 
   console.log("./");
   fs.readdir("./", (err, files) => {
     files.forEach((file) => {
-      console.log(file);
+      console.log("./", file);
     });
   });
 
@@ -187,7 +187,7 @@ exports.reset = (req, res) => {
   })
     .then((nums) => {
       console.log(`${nums} were deleted`);
-      let accountFile = fs.readFile("../accounts.json", (err, data) => {
+      let accountFile = fs.readFile(path.resolve("../accounts.json", (err, data) => {
         if (err) throw err;
         let accounts = JSON.parse(data);
         Account.bulkCreate(accounts)
