@@ -1,8 +1,14 @@
 {
-  "db": {
+  "db_dev": {
     "host": "localhost",
     "user": "mortgage_user",
     "password": "mortgage_password",
     "db": "mortgage"
+  },
+  "db": {
+    "host": "us-cdbr-east-04.cleardb.com",
+    "user": "b8a4151177a3f6",
+    "password": "28209c5a",
+    "db": "heroku_541ea25bfb6ce71"
   }
 }
