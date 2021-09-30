@@ -1,8 +1,0 @@
-{
-  "db": {
-    "host": "us-cdbr-east-04.cleardb.com",
-    "user": "b8a4151177a3f6",
-    "password": "28209c5a",
-    "db": "heroku_541ea25bfb6ce71"
-  }
-}
